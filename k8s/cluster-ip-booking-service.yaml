@@ -1,0 +1,14 @@
+# Service pour exposer le booking-service en interne au cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: booking-service
+  namespace: dev
+spec:
+  selector:
+    app: booking-service
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 8085
+  type: ClusterIP

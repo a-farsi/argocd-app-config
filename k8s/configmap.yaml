@@ -1,0 +1,12 @@
+---
+# ConfigMap pour les variables d'environnement non sensibles
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: booking-config
+  namespace: dev
+data:
+  SPRING_PROFILES_ACTIVE: "k8s-dev"
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://booking-db.dev.svc.cluster.local:5432/bookingdb"
+  SPRING_DATASOURCE_USERNAME: "user_booking"
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://discovery-service:8761/eureka"
